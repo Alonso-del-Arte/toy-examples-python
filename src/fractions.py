@@ -1,5 +1,8 @@
-# TODO: Write tests for this
 def euclidean_gcd(a, b) :
+    while b != 0 :
+        tempB = b
+        b = a % b
+        a = tempB
     return abs(a)
 
 class Fraction :
