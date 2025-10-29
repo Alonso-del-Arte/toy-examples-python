@@ -9,8 +9,8 @@ class Fraction :
 
     def __init__(self, numer, denom) :
         gcd = euclidean_gcd(numer, denom)
-        self.numerator = numer // gcd
-        self.denominator = denom // gcd
+        self.numerator = numer # // gcd
+        self.denominator = denom # // gcd
 
     def __str__(self) :
         if (self.denominator == 1) :
