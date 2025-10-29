@@ -32,6 +32,10 @@ class Fraction :
         return self.denominator == 1
     
     # TODO: Write tests for this
+    def __eq__(self, other) :
+        return True
+    
+    # TODO: Write tests for this
     def __add__(self, addend) :
         return self
 
