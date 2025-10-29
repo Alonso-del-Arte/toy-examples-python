@@ -28,9 +28,8 @@ class Fraction :
     def TeX_str(self) :
         return "SORRY --- NOT IMPLEMENTED YET"
 
-    # TODO: Write tests for this
     def is_integer(self) :
-        return True
+        return self.denominator == 1
     
     # TODO: Write tests for this
     def __add__(self, addend) :
