@@ -125,6 +125,16 @@ class FractionTest(unittest.TestCase) :
         message = f"{fractionA} should not equal {fractionB}"
         self.assertNotEqual(fractionA, fractionB, message)
     
+    def test_equals_even_if_not_in_lowest_terms(self) :
+        index = random.randrange(0, self.NUMBER_OF_PRIMES - 1)
+        numer = self.SOME_PRIMES[index]
+        denom = random.randrange(1, 256)
+        mult = random.randrange(2, 32)
+        some_fraction = src.fractions.Fraction(numer, denom)
+        same_fraction = src.fractions.Fraction(numer * mult, denom * mult)
+        message = f"{some_fraction} should equal {same_fraction}"
+        self.assertEqual(some_fraction, same_fraction, message)
+    
     def test_is_integer(self) :
         numer = random.randrange(-32768, 32767)
         instance = src.fractions.Fraction(numer, 1)
