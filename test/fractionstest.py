@@ -91,5 +91,12 @@ class FractionTest(unittest.TestCase) :
         message = f"Getting denominator of {instance}"
         self.assertEqual(expected, actual, message)
 
+    def test_str_integer(self) :
+        numer = random.randrange(-4096, 4095)
+        instance = src.fractions.Fraction(numer, 1)
+        expected = str(numer)
+        actual = str(instance)
+        self.assertEqual(expected, actual)
+
 if __name__ == '__main__' :
     unittest.main()
