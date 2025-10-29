@@ -27,3 +27,31 @@ class Fraction :
     # packages
     def TeX_str(self) :
         return "SORRY --- NOT IMPLEMENTED YET"
+
+    # TODO: Write tests for this
+    def is_integer(self) :
+        return false
+    
+    # TODO: Write tests for this
+    def __add__(self, addend) :
+        return self
+
+    # TODO: Write tests for this
+    def __neg__(self) :
+        return self
+
+    # TODO: Write tests for this
+    def __sub__(self, subtrahend) :
+        return self
+
+    # TODO: Write tests for this
+    def __mul__(self, multiplicand) :
+        return self
+
+    # TODO: Write tests for this
+    def reciprocal(self) :
+        return self
+
+    # TODO: Write tests for this
+    def __truediv__(self, divisor) :
+        return self
