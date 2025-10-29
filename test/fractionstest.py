@@ -11,3 +11,11 @@ class FractionTest(unittest.TestCase) :
     
     NUMBER_OF_PRIMES = len(SOME_PRIMES)
     
+    def test_euclidean_gcd_same_number(self) :
+        expected = random.randrange(1, 32767)
+        actual = src.fractions.euclidean_gcd(expected, expected)
+        msg = f"Reckoning gcd({expected}, {expected})"
+        self.assertEqual(expected, actual, msg)
+
+if __name__ == '__main__' :
+    unittest.main()
