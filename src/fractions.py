@@ -33,7 +33,7 @@ class Fraction :
     
     # TODO: Write tests for this
     def __eq__(self, other) :
-        return True
+        return False
     
     # TODO: Write tests for this
     def __add__(self, addend) :
