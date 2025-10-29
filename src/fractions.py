@@ -1,5 +1,5 @@
 # TODO: Write tests for this
-def euclideanGCD(a, b) :
+def euclidean_gcd(a, b) :
     return -1
 
 class Fraction :
