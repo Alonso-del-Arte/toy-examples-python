@@ -47,5 +47,13 @@ class FractionTest(unittest.TestCase) :
         actual = instance.denominator
         self.assertEqual(expected, actual)
     
+    def test_str(self) :
+        numer = random.randrange(1, 32767)
+        denom = numer + 1
+        instance = src.fractions.Fraction(numer, denom)
+        expected = f"{numer}/{denom}"
+        actual = str(instance)
+        self.assertEqual(expected, actual)
+    
 if __name__ == '__main__' :
     unittest.main()
