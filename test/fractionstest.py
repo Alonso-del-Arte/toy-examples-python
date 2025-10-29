@@ -98,6 +98,15 @@ class FractionTest(unittest.TestCase) :
         actual = str(instance)
         self.assertEqual(expected, actual)
 
+    def test_not_equal_diff_numer(self) :
+        numerA = random.randrange(1, 512)
+        numerB = numerA + random.randrange(1, 511)
+        denom = random.randrange(1, 1024)
+        fractionA = src.fractions.Fraction(numerA, denom)
+        fractionB = src.fractions.Fraction(numerB, denom)
+        message = f"{fractionA} should not equal {fractionB}"
+        self.assertNotEqual(fractionA, fractionB, message)
+   
     def test_is_integer(self) :
         numer = random.randrange(-32768, 32767)
         instance = src.fractions.Fraction(numer, 1)
