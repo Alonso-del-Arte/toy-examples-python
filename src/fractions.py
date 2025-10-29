@@ -11,7 +11,7 @@ class Fraction :
         gcd = euclidean_gcd(numer, denom)
         self.numerator = numer // gcd
         self._temp_denom = denom // gcd
-        self.denominator = denom
+        self.denominator = denom // gcd
 
     def __str__(self) :
         return str(self.numerator) + "/" + str(self._temp_denom)
