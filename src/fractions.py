@@ -10,4 +10,4 @@ class Fraction :
     # TODO: Write tests for this
     def __init__(self, numer, denom) :
         self.numerator = numer
-        self.denominator = -1
+        self.denominator = denom
