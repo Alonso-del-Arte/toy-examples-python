@@ -79,5 +79,17 @@ class FractionTest(unittest.TestCase) :
         message = f"Getting numerator of {instance}"
         self.assertEqual(expected, actual, message)
 
+    def test_constructor_sets_denominator_when_not_lowest_terms(self) :
+        exp_numer = 2 * random.randrange(1, 2048) + 1
+        expected = 2 * exp_numer + 1
+        power = 2 ** random.randrange(2, 16)
+        multiplier = power * exp_numer * expected
+        numer = multiplier * exp_numer
+        denom = multiplier * expected
+        instance = src.fractions.Fraction(numer, denom)
+        actual = instance.denominator
+        message = f"Getting denominator of {instance}"
+        self.assertEqual(expected, actual, message)
+
 if __name__ == '__main__' :
     unittest.main()
