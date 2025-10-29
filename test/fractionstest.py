@@ -98,5 +98,11 @@ class FractionTest(unittest.TestCase) :
         actual = str(instance)
         self.assertEqual(expected, actual)
 
+    def test_is_integer(self) :
+        numer = random.randrange(-32768, 32767)
+        instance = src.fractions.Fraction(numer, 1)
+        message = f"Number {instance} should be an integer"
+        assert instance.is_integer(), message
+    
 if __name__ == '__main__' :
     unittest.main()
