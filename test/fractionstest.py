@@ -103,6 +103,13 @@ class FractionTest(unittest.TestCase) :
         instance = src.fractions.Fraction(numer, 1)
         message = f"Number {instance} should be an integer"
         assert instance.is_integer(), message
+
+    def test_is_not_integer(self) :
+        numer = random.randrange(1, 32767)
+        denom = random.randrange(2, 32768)
+        instance = src.fractions.Fraction(numer, denom)
+        message = f"Number {instance} should not be an integer"
+        assert not instance.is_integer(), message
     
 if __name__ == '__main__' :
     unittest.main()
