@@ -13,4 +13,7 @@ class Fraction :
         self.denominator = denom
 
     def __str__(self) :
-        return str(self.numerator) + "/" + str(self.denominator)
+        gcd = euclidean_gcd(self.numerator, self.denominator)
+        numer = self.numerator // gcd
+        denom = self.denominator // gcd
+        return str(numer) + "/" + str(denom)
