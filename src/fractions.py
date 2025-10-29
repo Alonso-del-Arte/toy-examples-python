@@ -30,7 +30,7 @@ class Fraction :
 
     # TODO: Write tests for this
     def is_integer(self) :
-        return False
+        return True
     
     # TODO: Write tests for this
     def __add__(self, addend) :
