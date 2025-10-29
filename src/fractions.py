@@ -1,6 +1,6 @@
 # TODO: Write tests for this
 def euclidean_gcd(a, b) :
-    return a
+    return abs(a)
 
 class Fraction :
 
