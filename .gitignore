@@ -1,3 +1,6 @@
+src/__pycache__/
+test/__pycache__/
+
 ## Vim ##
 *.swp
 
@@ -9,4 +12,3 @@
 draft/
 localdevicenotes.txt
 scratchpad.txt
-
