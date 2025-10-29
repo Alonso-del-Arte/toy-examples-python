@@ -7,13 +7,11 @@ def euclidean_gcd(a, b) :
 
 class Fraction :
 
-    # TODO: Write tests for this
     def __init__(self, numer, denom) :
-        self.numerator = numer
+        gcd = euclidean_gcd(numer, denom)
+        self.numerator = numer // gcd
+        self._temp_denom = denom // gcd
         self.denominator = denom
 
     def __str__(self) :
-        gcd = euclidean_gcd(self.numerator, self.denominator)
-        numer = self.numerator // gcd
-        denom = self.denominator // gcd
-        return str(numer) + "/" + str(denom)
+        return str(self.numerator) + "/" + str(self._temp_denom)
