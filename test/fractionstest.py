@@ -190,5 +190,20 @@ class FractionTest(unittest.TestCase) :
         message = f"{msgPart} expected {expected}, got {actual}"
         self.assertEqual(expected, actual, message)
 
+    def test_sub(self) :
+        minuend_numer = random.randrange(1, 128)
+        subtr_numer = random.randrange(1, 128)
+        subtr_denom = random.randrange(2, 128)
+        minuend_denom = random.randrange(129, 256)
+        minuend = src.fractions.Fraction(minuend_numer, minuend_denom)
+        subtrahend = src.fractions.Fraction(subtr_numer, subtr_denom)
+        exp_num = minuend_numer * subtr_denom - subtr_numer * minuend_denom
+        exp_den = minuend_denom * subtr_denom
+        expected = src.fractions.Fraction(exp_num, exp_den)
+        actual = minuend - subtrahend
+        msgPart = f"Subtracting {subtrahend} from {minuend}"
+        message = f"{msgPart} expected {expected}, got {actual}"
+        self.assertEqual(expected, actual, message)
+
 if __name__ == '__main__' :
     unittest.main()
