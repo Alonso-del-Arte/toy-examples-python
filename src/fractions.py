@@ -45,7 +45,7 @@ class Fraction :
 
     # TODO: Write tests for this
     def __neg__(self) :
-        return self
+        return Fraction(-abs(self.numerator), self.denominator)
 
     # TODO: Write tests for this
     def __sub__(self, subtrahend) :
