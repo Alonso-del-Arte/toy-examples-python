@@ -214,5 +214,14 @@ class FractionTest(unittest.TestCase) :
         message = f"{instance} negated should be {expected}"
         self.assertEqual(expected, actual, message)
 
+    def test_negate_negative(self) :
+        denom = random.randrange(3, 2048)
+        numer = random.randrange(1, denom - 1)
+        instance = src.fractions.Fraction(-numer, denom)
+        expected = src.fractions.Fraction(numer, denom)
+        actual = -instance
+        message = f"{instance} negated should be {expected}"
+        self.assertEqual(expected, actual, message)
+
 if __name__ == '__main__' :
     unittest.main()
