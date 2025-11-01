@@ -43,9 +43,8 @@ class Fraction :
         cross_denom = self.denominator * addend.denominator
         return Fraction(cross_numerA + cross_numerB, cross_denom)
 
-    # TODO: Write tests for this
     def __neg__(self) :
-        return Fraction(-abs(self.numerator), self.denominator)
+        return Fraction(-self.numerator, self.denominator)
 
     # TODO: Write tests for this
     def __sub__(self, subtrahend) :
