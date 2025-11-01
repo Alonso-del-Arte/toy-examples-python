@@ -148,5 +148,18 @@ class FractionTest(unittest.TestCase) :
         message = f"Number {instance} should not be an integer"
         assert not instance.is_integer(), message
     
+    def test_add_same_denominator(self) :
+        index = random.randrange(0, self.NUMBER_OF_PRIMES - 1)
+        denom = self.SOME_PRIMES[index]
+        numerA = random.randrange(1, denom - 1)
+        numerB = random.randrange(1, denom - numerA - 1)
+        addendA = src.fractions.Fraction(numerA, denom)
+        addendB = src.fractions.Fraction(numerB, denom)
+        expected = src.fractions.Fraction(numerA + numerB, denom)
+        actual = addendA + addendB
+        msgPart = f"Adding up {addendA} and {addendB}"
+        message = f"{msgPart} expected {expected} got {actual}"
+        self.assertEqual(expected, actual, message)
+
 if __name__ == '__main__' :
     unittest.main()
