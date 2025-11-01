@@ -37,9 +37,11 @@ class Fraction :
             return False
         return self.denominator == other.denominator
     
-    # TODO: Write tests for this
     def __add__(self, addend) :
-        return Fraction(self.numerator + addend.numerator, self.denominator)
+        cross_numerA = self.numerator * addend.denominator
+        cross_numerB = addend.numerator * self.denominator
+        cross_denom = self.denominator * addend.denominator
+        return Fraction(cross_numerA + cross_numerB, cross_denom)
 
     # TODO: Write tests for this
     def __neg__(self) :
