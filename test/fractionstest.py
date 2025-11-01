@@ -175,6 +175,20 @@ class FractionTest(unittest.TestCase) :
         msgPart = f"Adding up {addendA} and {addendB}"
         message = f"{msgPart} expected {expected}, got {actual}"
         self.assertEqual(expected, actual, message)
-    
+
+    def test_subtract_same_denominator(self) :
+        index = random.randrange(0, self.NUMBER_OF_PRIMES - 1)
+        denom = self.SOME_PRIMES[index]
+        subtrahend_numer = random.randrange(1, denom - 2)
+        minuend_numer = random.randrange(subtrahend_numer + 1, denom - 1)
+        minuend = src.fractions.Fraction(minuend_numer, denom)
+        subtrahend = src.fractions.Fraction(subtrahend_numer, denom)
+        numer = minuend_numer - subtrahend_numer
+        expected = src.fractions.Fraction(numer, denom)
+        actual = minuend - subtrahend
+        msgPart = f"Subtracting {subtrahend} from {minuend}"
+        message = f"{msgPart} expected {expected}, got {actual}"
+        self.assertEqual(expected, actual, message)
+
 if __name__ == '__main__' :
     unittest.main()
