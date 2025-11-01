@@ -39,7 +39,7 @@ class Fraction :
     
     # TODO: Write tests for this
     def __add__(self, addend) :
-        return self
+        return Fraction(self.numerator + addend.numerator, self.denominator)
 
     # TODO: Write tests for this
     def __neg__(self) :
