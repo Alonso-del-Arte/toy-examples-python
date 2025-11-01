@@ -49,7 +49,7 @@ class Fraction :
 
     # TODO: Write tests for this
     def __sub__(self, subtrahend) :
-        return self
+        return Fraction(self.numerator - subtrahend.numerator, self.denominator)
 
     # TODO: Write tests for this
     def __mul__(self, multiplicand) :
