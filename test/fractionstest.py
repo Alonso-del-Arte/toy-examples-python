@@ -223,5 +223,20 @@ class FractionTest(unittest.TestCase) :
         message = f"{instance} negated should be {expected}"
         self.assertEqual(expected, actual, message)
 
+    def test_mul(self) :
+        multA_numer = random.randrange(1, 32)
+        multB_numer = random.randrange(1, 32)
+        multA_denom = random.randrange(2, 32)
+        multB_denom = random.randrange(33, 64)
+        multA = src.fractions.Fraction(multA_numer, multA_denom)
+        multB = src.fractions.Fraction(multB_numer, multB_denom)
+        exp_num = multA_numer * multB_numer
+        exp_den = multA_denom * multB_denom
+        expected = src.fractions.Fraction(exp_num, exp_den)
+        actual = multA * multB
+        msgPart = f"Multiplying {multA} by {multB}"
+        message = f"{msgPart} expected {expected}, got {actual}"
+        self.assertEqual(expected, actual, message)
+
 if __name__ == '__main__' :
     unittest.main()
