@@ -46,12 +46,8 @@ class Fraction :
     def __neg__(self) :
         return Fraction(-self.numerator, self.denominator)
 
-    # TODO: Write tests for this
     def __sub__(self, subtrahend) :
-        cross_numerA = self.numerator * subtrahend.denominator
-        cross_numerB = subtrahend.numerator * self.denominator
-        cross_denom = self.denominator * subtrahend.denominator
-        return Fraction(cross_numerA - cross_numerB, cross_denom)
+        return self.__add__(subtrahend.__neg__())
 
     # TODO: Write tests for this
     def __mul__(self, multiplicand) :
